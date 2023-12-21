@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.QuestionTableController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="198.0" style="-fx-background-color: #263F73;">
+         <children>
+            <Button fx:id="BackBtn" layoutX="14.0" layoutY="601.0" mnemonicParsing="false" onAction="#handleBackBtnClick" prefHeight="34.0" prefWidth="92.0" style="-fx-border-color: snow; -fx-background-color: #ff914d; -fx-border-radius: 15px; -fx-background-radius: 15;" text="Back">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="51.0" layoutY="119.0" prefHeight="105.0" prefWidth="229.0" text="question table" textFill="#f2f2f2">
+               <font>
+                  <Font name="Calibri Bold" size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow height="7.37" radius="3.8425000000000002" spread="0.37" width="10.0" />
+               </effect>
+            </Label>
+            <Label layoutX="106.0" layoutY="81.0" prefHeight="55.0" prefWidth="175.0" text="your" textFill="#f2f2f2">
+               <font>
+                  <Font name="Calibri Bold" size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow height="7.37" radius="3.8425000000000002" spread="0.37" width="10.0" />
+               </effect>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TableView fx:id="questionTable" layoutY="-1.0" prefHeight="650.0" prefWidth="909.0">
+               <columns>
+                  <TableColumn fx:id="idColumn" prefWidth="48.80001908540726" text="id" />
+                  <TableColumn fx:id="subjectColumn" prefWidth="61.60000228881836" text="subject" />
+                  <TableColumn fx:id="courseNameCloumn" prefWidth="87.99993896484375" text="course Name" />
+                  <TableColumn fx:id="questionTextColumn" prefWidth="84.80000305175781" text="question Text" />
+                  <TableColumn fx:id="questionNumberColumn" prefWidth="104.79998779296875" text="question Number" />
+                  <TableColumn fx:id="lecturerColumn" prefWidth="76.7999267578125" text="lecturer" />
+                  <TableColumn fx:id="op1Column" prefWidth="73.5999755859375" text="option1" />
+                  <TableColumn fx:id="op2Column" prefWidth="68.7999267578125" text="option2" />
+                  <TableColumn fx:id="op3Column" prefWidth="69.60003662109375" text="option3" />
+                  <TableColumn fx:id="op4Column" prefWidth="103.9998779296875" text="option4" />
+                  <TableColumn fx:id="correctopColumn" minWidth="0.0" prefWidth="136.8001708984375" text="correct option" />
+               </columns></TableView>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

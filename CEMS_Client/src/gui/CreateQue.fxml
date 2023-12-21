@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.29352164568621425" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CreateQuestionController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #263F73;">
+         <children>
+            <ImageView fitHeight="136.0" fitWidth="141.0" layoutX="20.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../PNG/CEMs.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="ViewQuestion" layoutX="11.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleQuestionsTableClick" prefHeight="27.0" prefWidth="158.0" style="-fx-background-color: #ff914d; -fx-border-color: snow; -fx-background-radius: 15; -fx-border-radius: 15;" text="View questions" />
+            <Button fx:id="BackButton" layoutX="20.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleBackClick" prefHeight="27.0" prefWidth="50.0" style="-fx-background-color: #ff914d; -fx-border-color: snow; -fx-background-radius: 15; -fx-border-radius: 15;" text="Back" />
+            <Label layoutX="8.0" layoutY="155.0" prefHeight="101.0" prefWidth="171.0" text="Questions management" textAlignment="CENTER" textFill="#ff914d" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="470.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="101.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="125.0" layoutY="14.0" prefHeight="43.0" prefWidth="255.0" text="Create Question" textFill="#ff914d">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="SubjectComboBox" layoutX="189.0" layoutY="101.0" prefHeight="26.0" prefWidth="150.0" />
+            <ComboBox fx:id="CoursenameComboBox" layoutX="188.0" layoutY="60.0" prefHeight="26.0" prefWidth="150.0" />
+            <TextArea fx:id="ans1" layoutX="60.0" layoutY="194.0" prefHeight="26.0" prefWidth="386.0" />
+            <TextArea fx:id="ans2" layoutX="60.0" layoutY="239.0" prefHeight="38.0" prefWidth="386.0" />
+            <TextArea fx:id="ans3" layoutX="60.0" layoutY="290.0" prefHeight="38.0" prefWidth="386.0" />
+            <TextArea fx:id="ans4" layoutX="63.0" layoutY="342.0" prefHeight="39.0" prefWidth="380.0" />
+            <Label layoutX="38.0" layoutY="207.0" text="1." />
+            <Label layoutX="38.0" layoutY="250.0" text="2." />
+            <Label layoutX="38.0" layoutY="301.0" text="3." />
+            <Label layoutX="38.0" layoutY="353.0" text="4." />
+            <TextArea fx:id="QuestionText" layoutX="98.0" layoutY="139.0" prefHeight="43.0" prefWidth="331.0" promptText="write your question here" />
+            <Button fx:id="Submit" layoutX="383.0" layoutY="392.0" mnemonicParsing="false" onAction="#addQuestionSubmit" style="-fx-background-color: #263F73;" text="Submit" textFill="#ff914d" />
+            <Label layoutX="98.0" layoutY="104.0" prefHeight="18.0" prefWidth="102.0" text="Course name :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="101.0" layoutY="60.0" prefHeight="26.0" prefWidth="62.0" text="Subject :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="139.0" prefHeight="43.0" prefWidth="70.0" text="Question" textFill="#050000" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="option1" layoutX="14.0" layoutY="207.0" mnemonicParsing="false" onMouseClicked="#markQuestion" />
+            <RadioButton fx:id="option2" layoutX="14.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#markQuestion" />
+            <RadioButton fx:id="option3" layoutX="14.0" layoutY="301.0" mnemonicParsing="false" onMouseClicked="#markQuestion" />
+            <RadioButton fx:id="option4" layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#markQuestion" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

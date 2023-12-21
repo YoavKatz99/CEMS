@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="404.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LecturerManageTestsController">
+   <children>
+      <MenuBar VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="New" />
+                  <MenuItem mnemonicParsing="false" text="Open…" />
+                  <Menu mnemonicParsing="false" text="Open Recent" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Save As…" />
+                  <MenuItem mnemonicParsing="false" text="Revert" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Preferences…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Quit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Undo" />
+                  <MenuItem mnemonicParsing="false" text="Redo" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Cut" />
+                  <MenuItem mnemonicParsing="false" text="Copy" />
+                  <MenuItem mnemonicParsing="false" text="Paste" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Select All" />
+                  <MenuItem mnemonicParsing="false" text="Unselect All" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane dividerPositions="0.25800193986420955" layoutX="-1.0" layoutY="3.0" prefHeight="375.0" prefWidth="690.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="185.0" style="-fx-background-color: #263F73;">
+                     <children>
+                        <Button id="logout" fx:id="BackBtn" layoutX="57.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleBackClick" prefHeight="24.0" prefWidth="65.0" style="-fx-background-color: #ff914d; -fx-border-color: snow; -fx-border-radius: 15; -fx-background-radius: 15;" text="BACK">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="145.0" fitWidth="162.0" layoutX="10.0" layoutY="19.0">
+                           <image>
+                              <Image url="@../PNG/CEMs.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="nameLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="170.0" prefHeight="28.0" prefWidth="154.0" style="-fx-alignment: center; -fx-text-alignment: center;" text="Label" textAlignment="CENTER" textFill="#ff914d" wrapText="true">
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="212.0" text="Tests center" textFill="#ff914d">
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="450.0" style="-fx-background-color: snow;">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <children>
+                        <Button id="submit" fx:id="ApplyBtn" layoutX="182.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleApplyClick" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #ff914d; -fx-border-color: snow; -fx-border-radius: 15; -fx-background-radius: 15;" text="Apply changes">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <HBox layoutX="16.0" layoutY="66.0" prefHeight="156.0" prefWidth="473.0">
+                           <children>
+                              <TableView fx:id="testsTable" prefHeight="156.0" prefWidth="473.0">
+                                 <columns>
+                                    <TableColumn fx:id="idCol" prefWidth="60.00004816055298" text="ID" />
+                                    <TableColumn fx:id="subjectCol" prefWidth="67.33330535888672" text="Subject" />
+                                    <TableColumn fx:id="courseCol" prefWidth="48.0" text="Course" />
+                                    <TableColumn fx:id="authorCol" prefWidth="67.0" text="Author" />
+                                    <TableColumn fx:id="durationCol" prefWidth="77.33335876464844" text="Duration" />
+                                    <TableColumn fx:id="codeCol" prefWidth="56.66668701171875" text="Code" />
+                                    <TableColumn fx:id="statusCol" prefWidth="97.33331298828125" text="status" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="182.0" layoutY="14.0" prefHeight="27.0" prefWidth="118.0" text="MY TESTS" textFill="#140000">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button id="submit" fx:id="RequestBtn" layoutX="166.0" layoutY="239.0" mnemonicParsing="false" onAction="#handleExtraTimeClick" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: navy; -fx-border-color: snow; -fx-border-radius: 15; -fx-background-radius: 15;" text="Request Extra Time" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ImageView fx:id="info" fitHeight="27.0" fitWidth="26.0" layoutX="408.0" layoutY="326.0">
+                           <image>
+                              <Image url="@../PNG/infoIcon.png" />
+                           </image>
+                           <effect>
+                              <Blend opacity="0.86" />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

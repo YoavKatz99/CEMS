@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.2483258928571429" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CreateTest1Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="143.0" style="-fx-background-color: #263F73;">
+         <children>
+            <Label layoutX="15.0" layoutY="102.0" text="Create Test" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <Label layoutX="21.0" layoutY="183.0" text="subject" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="243.0" text="course" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="CourseComboBox" layoutX="21.0" layoutY="208.0" prefHeight="25.0" prefWidth="114.0" style="-fx-border-color: snow;" />
+            <ComboBox fx:id="SubjectComboBox" layoutX="21.0" layoutY="261.0" prefHeight="25.0" prefWidth="114.0" style="-fx-border-color: snow;" />
+            <Button fx:id="Back" layoutX="44.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleBackClick" prefHeight="27.0" prefWidth="50.0" style="-fx-background-color: #ff914d; -fx-border-color: snow; -fx-background-radius: 15; -fx-border-radius: 15;" text="Back" />
+            <Label layoutX="41.0" layoutY="131.0" text="Step 1/2" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <ImageView fitHeight="133.0" fitWidth="143.0" layoutX="1.0" layoutY="-13.0">
+               <image>
+                  <Image url="@../../../fxml/CEMs.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="ShowquestionButton" layoutX="21.0" layoutY="301.0" mnemonicParsing="false" onAction="#setTable" prefHeight="27.0" prefWidth="114.0" style="-fx-background-color: #ff914d; -fx-border-color: snow; -fx-background-radius: 15; -fx-border-radius: 15;" text="Show question" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <VBox layoutX="2.0" layoutY="-2.0" prefHeight="400.0" prefWidth="446.0">
+               <children>
+                  <SplitPane dividerPositions="0.8626465661641539" orientation="VERTICAL" prefHeight="403.0" prefWidth="446.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="275.0" prefWidth="443.0">
+                           <children>
+                              <TableView fx:id="QuestionTable" layoutX="2.0" layoutY="-1.0" prefHeight="340.0" prefWidth="443.0">
+                                <columns>
+                                    <TableColumn fx:id="selectColumn" prefWidth="55.9998779296875" text="select" />
+                                    <TableColumn fx:id="idcolumn" prefWidth="52.799983978271484" text="id" />
+                                    <TableColumn fx:id="questionTextColumn" prefWidth="85.60003662109375" text="questionText" />
+                                    <TableColumn fx:id="op1Column" prefWidth="43.20001220703125" text="op1" />
+                                    <TableColumn fx:id="op2Column" prefWidth="49.60005187988281" text="op2" />
+                                    <TableColumn fx:id="op3Column" prefWidth="47.199951171875" text="op3" />
+                                    <TableColumn fx:id="op4Column" prefWidth="41.60003662109375" text="op4" />
+                                    <TableColumn fx:id="correctopColumn" prefWidth="62.40001220703124" text="correctop" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="92.0" prefWidth="443.0">
+                           <children>
+                              <Button fx:id="NextButton" layoutX="336.0" layoutY="11.0" mnemonicParsing="false" onAction="#selectItems" prefHeight="28.0" prefWidth="83.0" style="-fx-border-color: gray; -fx-border-radius: 15; -fx-background-radius: 15;" text="Next">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="92.0" layoutY="17.0" prefHeight="17.0" prefWidth="233.0" text="Procceed to questions scoring and free text:">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

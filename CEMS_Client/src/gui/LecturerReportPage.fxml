@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="550.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LecturerReportController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane dividerPositions="0.31064356435643564" layoutX="-1.0" layoutY="1.0" prefHeight="550.0" prefWidth="810.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="548.0" prefWidth="259.0" style="-fx-background-color: #263F73;">
+                     <children>
+                        <Label layoutX="61.0" layoutY="178.0" text="Tests Report" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="backBtn" layoutX="91.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleBackClick" prefHeight="28.0" prefWidth="59.0" style="-fx-border-color: snow; -fx-background-color: #ff914d; -fx-border-radius: 15px; -fx-background-radius: 15;" text="Back">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="29.0" layoutY="246.0" prefHeight="17.0" prefWidth="59.0" text="Course:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="courseComboBox" layoutX="88.0" layoutY="242.0" prefHeight="25.0" prefWidth="118.0" style="-fx-border-radius: 25; -fx-background-radius: 15; -fx-background-insets: 2;" />
+                        <Label layoutX="43.0" layoutY="300.0" prefHeight="17.0" prefWidth="38.0" text="Test:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="testComboBox" layoutX="89.0" layoutY="296.0" prefHeight="25.0" prefWidth="118.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-background-insets: 2;" />
+                        <Button fx:id="genertaeReportBtn" layoutX="48.0" layoutY="372.0" mnemonicParsing="false" onAction="#handleGenerateClick" prefHeight="29.0" prefWidth="157.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: snow; -fx-background-color: #ff914d;" text="Generate Test Report">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="128.0" fitWidth="150.0" layoutX="52.0" layoutY="14.0">
+                           <image>
+                              <Image url="@../PNG/CEMs.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lecturerNameLbl" layoutX="61.0" layoutY="152.0" prefHeight="22.0" prefWidth="144.0" text="LECTURER NAME" textAlignment="JUSTIFY" textFill="#fffdfd">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="548.0" prefWidth="569.0">
+                     <children>
+                        <Label fx:id="testIdLbl" layoutX="21.0" layoutY="11.0" prefHeight="23.0" prefWidth="203.0" text="Test ID ###### Report:">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <BarChart fx:id="distributionChart" layoutX="2.0" layoutY="170.0" prefHeight="363.0" prefWidth="531.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <TableView fx:id="testInfoTable" layoutX="11.0" layoutY="43.0" prefHeight="60.0" prefWidth="531.0" style="-fx-pref-height: 70; -fx-pref-width: 530;">
+                          <columns>
+                            <TableColumn fx:id="dateCol" prefWidth="100.00004827976227" text="Date" />
+                            <TableColumn fx:id="timeCol" prefWidth="89.99999237060547" text="Time" />
+                              <TableColumn fx:id="stdStartedCol" prefWidth="133.3332977294922" text="Students Started" />
+                              <TableColumn fx:id="submittedCol" prefWidth="106.0" style="-fx-text-alignment: center;" text="submitted" />
+                              <TableColumn fx:id="notSubmittedCol" maxWidth="4900.0" minWidth="0.0" prefWidth="98.66659545898438" text="not submitted" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Label fx:id="averageLbl" layoutX="44.0" layoutY="122.0" prefHeight="22.0" prefWidth="126.0" text="Average:">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="medianLbl" layoutX="227.0" layoutY="124.0" prefHeight="22.0" prefWidth="150.0" text="Medain:">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

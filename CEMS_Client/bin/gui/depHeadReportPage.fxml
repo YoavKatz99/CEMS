@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="647.0" prefWidth="1138.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DepHeadReportsController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane dividerPositions="0.24295774647887325" layoutX="-1.0" layoutY="1.0" prefHeight="646.0" prefWidth="1138.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="644.0" prefWidth="309.0" style="-fx-background-color: #263F73;">
+                     <children>
+                        <Label layoutX="61.0" layoutY="217.0" prefHeight="37.0" prefWidth="139.0" text="Select report type" textFill="#f8f8f8" wrapText="true">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="backBtn" layoutX="92.0" layoutY="600.0" mnemonicParsing="false" onAction="#handleBackClick" prefHeight="28.0" prefWidth="73.0" style="-fx-border-color: snow; -fx-background-color: #ff914d; -fx-border-radius: 15px; -fx-background-radius: 15;" text="Back">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <ComboBox fx:id="reportTypeComboBox" layoutX="70.0" layoutY="254.0" prefHeight="25.0" prefWidth="118.0" style="-fx-border-radius: 25; -fx-background-radius: 15; -fx-background-insets: 2;" />
+                        <Button fx:id="generateReportBtn" layoutX="50.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleGenerateReportClick" prefHeight="29.0" prefWidth="157.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: snow; -fx-background-color: #ff914d;" text="Generate Report">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="128.0" fitWidth="150.0" layoutX="57.0" layoutY="14.0">
+                           <image>
+                              <Image url="@../PNG/CEMs.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="23.0" layoutY="126.0" prefHeight="76.0" prefWidth="221.0" text="Department Head Reports" textAlignment="CENTER" textFill="#f8f8f8" wrapText="true">
+                           <font>
+                              <Font name="Calibri Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="secondSelectionLabel" layoutX="17.0" layoutY="303.0" prefHeight="37.0" prefWidth="235.0" text="Select student/course/lecturer" textFill="#f8f8f8" wrapText="true">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="specComboBox" layoutX="69.0" layoutY="341.0" prefHeight="25.0" prefWidth="118.0" style="-fx-border-radius: 25; -fx-background-radius: 15; -fx-background-insets: 2;" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="644.0" prefWidth="820.0">
+                     <children>
+                        <Label fx:id="reportLabel" layoutX="16.0" layoutY="3.0" prefHeight="30.0" prefWidth="409.0" text="Report Headline" underline="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font></Label>
+                        <AreaChart fx:id="distributionChart" layoutY="269.0" prefHeight="365.0" prefWidth="838.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </AreaChart>
+                        <LineChart fx:id="gradesChart" layoutX="3.0" layoutY="34.0" prefHeight="246.0" prefWidth="403.0" style="-fx-background-radius: 10;">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <BarChart fx:id="medianChart" layoutX="419.0" layoutY="30.0" prefHeight="246.0" prefWidth="419.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <Label fx:id="instructionLabel" contentDisplay="CENTER" graphicTextGap="1.0" layoutX="-7.0" layoutY="108.0" opacity="0.58" prefHeight="391.0" prefWidth="869.0" text="To see a report choose a report type and then choose student/course/ lecturer accordingly, finaly click generate report" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="44.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
