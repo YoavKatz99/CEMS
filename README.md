@@ -32,7 +32,7 @@ Before using the College Test Management System, ensure the following:
 
 4. **Interact with the System:**
    - Use the client application to perform actions such as creating tests, performing tests, checking tests, and recording grades.
-   - Look at instructions.docx, it'll guide you thourgh all actions.
+   - Look at instructions.pdf, it'll guide you thourgh all actions.
      
 
 ## Documentation
