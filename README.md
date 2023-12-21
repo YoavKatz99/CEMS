@@ -32,10 +32,11 @@ Before using the College Test Management System, ensure the following:
 
 4. **Interact with the System:**
    - Use the client application to perform actions such as creating tests, performing tests, checking tests, and recording grades.
+   - Look at instructions.docx, it'll guide you thourgh all actions.
+     
 
 ## Documentation
 
-The `Documentation` folder contains essential project documentation, including user manuals, setup guides, and any additional information related to the system's functionality.
 
 The `JavaDoc` folder includes HTML files documenting the Java code. Open the `index.html` file in a web browser to explore the Java documentation.
 
@@ -46,4 +47,5 @@ This project was collaboratively developed by:
 - Yael Kanter
 - Roy Darom
 - Iris Kanter
-- Little Lashczynski
+- Lital Lashczynski
+- Yoav Katz
