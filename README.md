@@ -15,7 +15,7 @@ The Computerized Test Management System is designed to facilitate various action
 Before using the College Test Management System, ensure the following:
 
 - MySQL Workbench is installed and running.
-- The necessary tables are set up in the MySQL server using the scripts provided in the `db` folder.
+- The necessary tables are set up in the MySQL server using the scripts provided in the `DB` folder.
 
 ## Usage
 
