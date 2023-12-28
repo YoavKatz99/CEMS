@@ -1,7 +1,7 @@
 
-# Computerized Test Management System
+# Computerized Exams Management System
 
-The Computerized Test Management System is designed to facilitate various actions related to tests conducted at the college. The primary goals of the system include creating tests, performing tests, checking tests, recording grades, and processing information for management, analysis, and presentation.
+The Computerized Exams Management System is designed to facilitate various actions related to tests conducted at the college. The primary goals of the system include creating tests, performing tests, checking tests, recording grades, and processing information for management, analysis, and presentation.
 
 ## Table of Contents
 
